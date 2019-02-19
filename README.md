@@ -21,19 +21,25 @@ The statistics shown are:
 The project also meters the time of the calculations made by the data analysis program.
 
 Cities currently enabled: Chicago, New York City and Washington.
-*Note: The data of the city of Washington doesn't have the information of Gender and Birth Year*
+*Note: The data of the city of Washington doesn't have the information of Gender and Birth Year.*
 
 ### Files used
+Executable program:
+* bikeshare.py
+
 The data of the cities to analyze
 * chicago.csv
 * new_york_city.csv
 * washington.csv
 
 ### Usage
+For usage run:
 `$ python bikeshare.py`
+
+And choose the options you want to display.
 
 ### Credits
 https://udacity.com/
 
 ### License
-Bikeshare is released under the **MIT License**
+This Bikeshare projet is released under the **MIT License**
