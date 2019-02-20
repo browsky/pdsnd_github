@@ -127,20 +127,29 @@ def time_stats(df):
         start_time = time.time()
         # display the most common month
         popular_month = df['month'].mode()
-        for pop_month in popular_month:
-            print('Most Popular Month: ', calendar.month_name[pop_month])
+        message = ''
+        for month in popular_month:
+            message = calendar.month_name[month] + '  '
+        message = message.rstrip().replace('  ',', ')
+        print('Most Popular Month(s): ', message)
 
         # display the most common day of week
         popular_day = df['day_of_week'].mode()
-        for pop_day in popular_day:
-            print('Most Popular Day of the Week: ', pop_day)
+        message = ''
+        for day in popular_day:
+            message = day + '  '
+        message = message.rstrip().replace('  ',', ')
+        print('Most Popular Day of the Week: ', message)
 
         # display the most common start hour
         df['Start Time'] = pd.to_datetime(df['Start Time'])
         df['hour'] = df['Start Time'].dt.hour
         popular_hour = df['hour'].mode()
-        for pop_hour in popular_hour:
-            print('Most Popular Start Hour: ', pop_hour)
+        message = ''
+        for hour in popular_hour:
+            message = str(hour) + '  '
+        message = message.rstrip().replace('  ',', ')
+        print('Most Popular Start Hour: ', message)
 
         print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -154,19 +163,28 @@ def station_stats(df):
 
         # display most commonly used start station
         popular_start_stn = df['Start Station'].mode()
-        for pop_start_stn in popular_start_stn:
-            print('Most Common Start Station: ', pop_start_stn)
+        message = ''
+        for station in popular_start_stn:
+            message = station + '  '
+        message = message.rstrip().replace('  ',', ')
+        print('Most Common Start Station: ', message)
 
         # display most commonly used end station
         popular_end_stn = df['End Station'].mode()
-        for pop_end_stn in popular_end_stn:
-            print('Most Common End Station: ', pop_end_stn)
+        message = ''
+        for station in popular_end_stn:
+            message = station + '  '
+        message = message.rstrip().replace('  ',', ')
+        print('Most Common End Station: ', message)
 
         # display most frequent combination of start station and end station trip
         df['Trip Stations'] = df['Start Station'] + ' to ' + df['End Station']
         popular_trip_stns = df['Trip Stations'].mode()
-        for pop_trip_stns in popular_trip_stns:
-            print('Most Common Start and End Stations: ', pop_trip_stns)
+        message = ''
+        for trip in popular_trip_stns:
+            message = trip + '  '
+        message = message.rstrip().replace('  ',', ')
+        print('Most Common Start and End Stations: ', message)
 
         print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -229,8 +247,11 @@ def user_stats(df):
             most_recent_by = df['Birth Year'].max()
             print('Most Recent Year of Birth of Users: ', int(most_recent_by))
             most_common_by = df['Birth Year'].mode()
-            for common_by in most_common_by:
-                print('Most Common Year of Birth of Users: ', int(common_by))
+            message = ''
+            for year in most_common_by:
+                message = str(int(year)) + '  '
+            message = message.rstrip().replace('  ',', ')
+            print('Most Common Year of Birth of Users: ', message)
         else:
             print('There is no data of Birth Year for the city selected!')
             print()
