@@ -130,7 +130,7 @@ def time_stats(df):
         message = ''
         for month in popular_month:
             message = calendar.month_name[month] + '  '
-        message = message.rstrip().replace('  ',', ')
+        message = message.rstrip().replace('  ', ', ')
         print('Most Popular Month(s): ', message)
 
         # display the most common day of week
@@ -138,7 +138,7 @@ def time_stats(df):
         message = ''
         for day in popular_day:
             message = day + '  '
-        message = message.rstrip().replace('  ',', ')
+        message = message.rstrip().replace('  ', ', ')
         print('Most Popular Day of the Week: ', message)
 
         # display the most common start hour
@@ -148,7 +148,7 @@ def time_stats(df):
         message = ''
         for hour in popular_hour:
             message = str(hour) + '  '
-        message = message.rstrip().replace('  ',', ')
+        message = message.rstrip().replace('  ', ', ')
         print('Most Popular Start Hour: ', message)
 
         print("\nThis took %s seconds." % (time.time() - start_time))
@@ -166,7 +166,7 @@ def station_stats(df):
         message = ''
         for station in popular_start_stn:
             message = station + '  '
-        message = message.rstrip().replace('  ',', ')
+        message = message.rstrip().replace('  ', ', ')
         print('Most Common Start Station: ', message)
 
         # display most commonly used end station
@@ -174,7 +174,7 @@ def station_stats(df):
         message = ''
         for station in popular_end_stn:
             message = station + '  '
-        message = message.rstrip().replace('  ',', ')
+        message = message.rstrip().replace('  ', ', ')
         print('Most Common End Station: ', message)
 
         # display most frequent combination of start station and end station trip
@@ -183,7 +183,7 @@ def station_stats(df):
         message = ''
         for trip in popular_trip_stns:
             message = trip + '  '
-        message = message.rstrip().replace('  ',', ')
+        message = message.rstrip().replace('  ', ', ')
         print('Most Common Start and End Stations: ', message)
 
         print("\nThis took %s seconds." % (time.time() - start_time))
@@ -250,7 +250,7 @@ def user_stats(df):
             message = ''
             for year in most_common_by:
                 message = str(int(year)) + '  '
-            message = message.rstrip().replace('  ',', ')
+            message = message.rstrip().replace('  ', ', ')
             print('Most Common Year of Birth of Users: ', message)
         else:
             print('There is no data of Birth Year for the city selected!')
